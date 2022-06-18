@@ -1,0 +1,33 @@
+<header>
+  <mat-toolbar>
+    <img class="logo" src="/assets/angular-icon.svg" alt="Angular Logo" />
+    <span>Angular Login</span>
+
+    <span class="example-spacer"></span>
+
+    <button
+      *ngIf="!isLoggedIn"
+      mat-raised-button
+      color="primary"
+      (click)="openDialog()"
+    >
+      <mat-icon>login</mat-icon>
+      Ingresar
+    </button>
+
+    <div *ngIf="isLoggedIn" class="user-info">
+      <mat-icon>account_circle</mat-icon>
+      <span class="user-name"> {{ user.name }} </span>
+    </div>
+
+    <button
+      *ngIf="isLoggedIn"
+      mat-raised-button
+      color="warn"
+      (click)="logout()"
+    >
+      <mat-icon>logout</mat-icon>
+      Salir
+    </button>
+  </mat-toolbar>
+</header>
