@@ -1,6 +1,17 @@
 <h1>Bienvenido</h1>
-<div *ngIf="isLoggedIn">
-  <h2>Usuario:</h2>
 
+<div *ngIf="isLoggedIn; else public">
+  <h2>Usuario Autenticado</h2>
   <pre>{{ user | json }}</pre>
 </div>
+
+<ng-template #public>
+  <div>
+    <h2>Contenido Público</h2>
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit
+      esse error beatae dicta molestiae? Quia animi dignissimos, quos maiores ex
+      placeat esse optio assumenda voluptate sequi alias, ab nemo natus?
+    </p>
+  </div>
+</ng-template>

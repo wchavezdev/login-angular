@@ -17,11 +17,13 @@ export class AuthService {
 
   constructor() {}
 
-  public loginMock(email: string, password: string) {
+  public loginMock(email: string, password: string): boolean {
     const matchEmailAndPassword =
       email === this._fixedEmail && password === this._fixedPassword;
 
     this.isLoggedIn = matchEmailAndPassword;
+
+    return matchEmailAndPassword;
   }
 
   public logoutMock() {

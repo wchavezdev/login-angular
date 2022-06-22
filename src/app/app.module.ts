@@ -10,6 +10,7 @@ import { SharedModule } from './shared/shared.module';
 import { MaterialModule } from './material/material.module';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LoginDialogComponent } from './login-dialog/login-dialog.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, HomePageComponent, LoginDialogComponent],
@@ -17,6 +18,7 @@ import { LoginDialogComponent } from './login-dialog/login-dialog.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     MaterialModule,
     SharedModule,
   ],
