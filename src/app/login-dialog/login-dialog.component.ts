@@ -10,7 +10,7 @@ import { AuthService } from '../auth/auth.service';
 })
 export class LoginDialogComponent implements OnInit {
   showLoginError: boolean = false;
-  loginError: string = 'El usuario o la contraseña son incorrectos';
+  loginError: string = 'El email o la contraseña son incorrectos';
 
   loginForm = this.fb.group({
     email: ['', [Validators.email, Validators.required]],
