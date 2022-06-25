@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Eliminar Cliente</h1>
+<div mat-dialog-content>
+  Estas seguro de elminar al cliente {{ data.nombres }} {{ data.apellidos }}
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>No</button>
+  <button mat-button mat-dialog-close cdkFocusInitial (click)="onConfirm()">
+    Ok
+  </button>
+</div>

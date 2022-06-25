@@ -1,7 +1,14 @@
 <header>
   <mat-toolbar>
     <img class="logo" src="/assets/angular-icon.svg" alt="Angular Logo" />
-    <span>Angular Login</span>
+    <span>AngularCRUD</span>
+
+    <nav class="navbar">
+      <a routerLink="/" routerLinkActive="active">Home</a>
+      <a *ngIf="isLoggedIn" routerLink="clientes" routerLinkActive="active">
+        Clientes
+      </a>
+    </nav>
 
     <span class="example-spacer"></span>
 
