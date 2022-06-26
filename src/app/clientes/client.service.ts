@@ -19,7 +19,14 @@ export class ClientService {
   constructor() {}
 
   public filterClients(filterValue: string): void {
-    this._clientes = this._clientes.filter(
+    const clientsPrevFiltered = this._clientes;
+
+    if (filterValue === '') {
+      this.dataSource.setData(clientsPrevFiltered);
+      return;
+    }
+
+    const filteredClients = this._clientes.filter(
       (cliente) =>
         cliente.cedula.toLowerCase().includes(filterValue) ||
         cliente.nombres.toLowerCase().includes(filterValue) ||
@@ -28,7 +35,7 @@ export class ClientService {
         cliente.edad.toString().includes(filterValue)
     );
 
-    this.dataSource.setData(this._clientes);
+    this.dataSource.setData(filteredClients);
   }
 
   public addClient(newClient: Cliente): void {
