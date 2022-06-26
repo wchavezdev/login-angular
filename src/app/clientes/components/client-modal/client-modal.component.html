@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>Agregar Cliente</h1>
+<h1 mat-dialog-title> {{ isAdding ? "Agregar Cliente" : "Actualizar Cliente" }}</h1>
 
 <form [formGroup]="clientForm" (ngSubmit)="submit()" novalidate>
   <div mat-dialog-content>
