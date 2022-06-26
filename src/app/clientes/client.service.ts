@@ -18,6 +18,19 @@ export class ClientService {
 
   constructor() {}
 
+  public filterClients(filterValue: string): void {
+    this._clientes = this._clientes.filter(
+      (cliente) =>
+        cliente.cedula.toLowerCase().includes(filterValue) ||
+        cliente.nombres.toLowerCase().includes(filterValue) ||
+        cliente.apellidos.toLowerCase().includes(filterValue) ||
+        cliente.direccion.toLowerCase().includes(filterValue) ||
+        cliente.edad.toString().includes(filterValue)
+    );
+
+    this.dataSource.setData(this._clientes);
+  }
+
   public addClient(newClient: Cliente): void {
     this._clientes.push(newClient);
 

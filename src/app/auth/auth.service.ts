@@ -8,7 +8,7 @@ export class AuthService {
   private _fixedEmail = 'jhondoe@email.com';
   private _fixedPassword = '123456';
 
-  public isLoggedIn: boolean = false;
+  public isLoggedIn: boolean = true;
   public mockUser: User = {
     name: 'John Doe',
     email: this._fixedEmail,

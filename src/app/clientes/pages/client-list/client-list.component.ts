@@ -32,6 +32,12 @@ export class ClientListComponent implements OnInit {
 
   ngOnInit() {}
 
+  // Filter
+  applyFilter(e: Event) {
+    const filterValue = (e.target as HTMLInputElement).value;
+    this.clientService.filterClients(filterValue.trim().toLowerCase());
+  }
+
   openClientModal(client?: Cliente) {
     this.dialog.open(ClientModalComponent, {
       width: '360px',

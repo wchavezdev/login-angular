@@ -7,6 +7,16 @@
   </button>
 </div>
 
+<mat-form-field appearance="standard" class="search">
+  <mat-label>Buscar clientes</mat-label>
+  <input
+    matInput
+    (keyup)="applyFilter($event)"
+    placeholder="Ej. Jhon Doe"
+    #input
+  />
+</mat-form-field>
+
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   <ng-container matColumnDef="cedula">
     <th mat-header-cell *matHeaderCellDef>Cédula</th>
@@ -47,4 +57,11 @@
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+  <!-- Row shown when there is no matching data. -->
+  <tr class="mat-row" *matNoDataRow>
+    <td class="mat-cell" colspan="5">
+      No se ha encontrado resultados con "{{ input.value }}"
+    </td>
+  </tr>
 </table>
